@@ -59,10 +59,10 @@ resource "aws_eks_cluster" "cluster" {
 
   vpc_config {
     subnet_ids = [
-      aws_subnet.private-ap-south-1a.id,
-      aws_subnet.private-ap-south-1b.id,
-      aws_subnet.public-ap-south-1a.id,
-      aws_subnet.public-ap-south-1b.id
+      aws_subnet.private-us-east-1a.id,
+      aws_subnet.private-us-east-1a.id,
+      aws_subnet.public-us-east-1a.id,
+      aws_subnet.public-us-east-1a.id
     ]
     endpoint_private_access = false
     endpoint_public_access  = true
@@ -82,8 +82,8 @@ resource "aws_eks_node_group" "private-nodes-01" {
   version         = var.cluster_config.cluster_version
 
   subnet_ids = [
-    aws_subnet.private-ap-south-1a.id,
-    aws_subnet.private-ap-south-1b.id
+    aws_subnet.private-us-east-1a.id,
+    aws_subnet.private-us-east-1b.id
   ]
 
   capacity_type  = "SPOT"
@@ -122,8 +122,8 @@ resource "aws_eks_node_group" "private-nodes-02" {
   version         = var.cluster_config.cluster_version
 
   subnet_ids = [
-    aws_subnet.private-ap-south-1a.id,
-    aws_subnet.private-ap-south-1b.id
+    aws_subnet.private-us-east-1a.id,
+    aws_subnet.private-us-east-1b.id
   ]
 
   capacity_type  = "SPOT"
@@ -184,7 +184,7 @@ resource "aws_iam_policy" "node_additional_permissions" {
           "dynamodb:BatchGetItem",
           "dynamodb:BatchWriteItem"
         ]
-        Resource = "arn:aws:dynamodb:ap-south-1:434605749312:table/PhotosMetadata" # Specify your table ARN
+        Resource = "arn:aws:dynamodb:us-east-1:967762580629:table/PhotosMetadata" # Specify your table ARN
       },
       {
         Effect = "Allow"
@@ -193,7 +193,7 @@ resource "aws_iam_policy" "node_additional_permissions" {
           "arn:aws:s3:::codedevops-staging-ui/*"
         ]
       }
-    ]
+    ]  
   })
 }
 

@@ -44,25 +44,25 @@ output "vpc_details" {
     enable_dns_support   = aws_vpc.vpc.enable_dns_support
     internet_gateway     = aws_internet_gateway.igw.id
     allocation_id        = aws_eip.nat.id
-    "private-ap-south-1a" = {
-      id                = aws_subnet.private-ap-south-1a.id
-      cidr_block        = aws_subnet.private-ap-south-1a.cidr_block
-      availability_zone = aws_subnet.private-ap-south-1a.availability_zone
+    "private-us-east-1a" = {
+      id                = aws_subnet.private-us-east-1a.id
+      cidr_block        = aws_subnet.private-us-east-1a.cidr_block
+      availability_zone = aws_subnet.private-us-east-1a.availability_zone
     }
-    "private-ap-south-1b" = {
-      id                = aws_subnet.private-ap-south-1b.id
-      cidr_block        = aws_subnet.private-ap-south-1b.cidr_block
-      availability_zone = aws_subnet.private-ap-south-1b.availability_zone
+    "private-us-east-1b" = {
+      id                = aws_subnet.private-us-east-1b.id
+      cidr_block        = aws_subnet.private-us-east-1b.cidr_block
+      availability_zone = aws_subnet.private-us-east-1b.availability_zone
     }
-    "public-ap-south-1a" = {
-      id                = aws_subnet.public-ap-south-1a.id
-      cidr_block        = aws_subnet.public-ap-south-1a.cidr_block
-      availability_zone = aws_subnet.public-ap-south-1a.availability_zone
+    "public-us-east-1a" = {
+      id                = aws_subnet.public-us-east-1a.id
+      cidr_block        = aws_subnet.public-us-east-1a.cidr_block
+      availability_zone = aws_subnet.public-us-east-1a.availability_zone
     }
-    "public-ap-south-1b" = {
-      id                = aws_subnet.public-ap-south-1b.id
-      cidr_block        = aws_subnet.public-ap-south-1b.cidr_block
-      availability_zone = aws_subnet.public-ap-south-1b.availability_zone
+    "public-us-east-1b" = {
+      id                = aws_subnet.public-us-east-1b.id
+      cidr_block        = aws_subnet.public-us-east-1b.cidr_block
+      availability_zone = aws_subnet.public-us-east-1b.availability_zone
     }
 
 
