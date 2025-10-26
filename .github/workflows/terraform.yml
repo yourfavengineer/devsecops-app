@@ -33,7 +33,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: ${{ env.AWS_REGION }}
-        role-to-assume: arn:aws:iam::967762580629:user/terraform_ci_user
+        role-to-assume: arn:aws:iam::967762580629:role/devsecops-terraform-ci
         role-session-name: staging-session    
     - name: Checkout
       uses: actions/checkout@v3 #test
