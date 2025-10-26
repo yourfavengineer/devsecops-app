@@ -1,6 +1,6 @@
 provider "aws" {
-  region              = "ap-south-1"
-  allowed_account_ids = [434605749312]
+  region              = "us-east-1"
+  allowed_account_ids = [967762580629]
   default_tags {
     tags = {
       environment = var.env
@@ -11,7 +11,7 @@ provider "aws" {
 provider "aws" {
   alias               = "us-east-1"
   region              = "us-east-1"
-  allowed_account_ids = [434605749312]
+  allowed_account_ids = [967762580629]
   default_tags {
     tags = {
       environment = var.env

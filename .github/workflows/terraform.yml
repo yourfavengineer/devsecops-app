@@ -16,7 +16,7 @@ permissions:
   id-token: write
   contents: read 
 env: 
-  AWS_REGION: ap-south-1
+  AWS_REGION: us-east-1
   TF_VERSION: 1.2.6   
 
 jobs:
@@ -33,12 +33,12 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: ${{ env.AWS_REGION }}
-        role-to-assume: arn:aws:iam::434605749312:role/aws-deployment-tf
+        role-to-assume: arn:aws:iam::967762580629:user/terraform_ci_user
         role-session-name: staging-session    
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3 #test
       
-    - name: Setup terraform
+    - name: Setup terraform 
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: ${{ env.TF_VERSION }} 
