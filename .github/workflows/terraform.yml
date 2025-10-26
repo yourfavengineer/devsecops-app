@@ -35,7 +35,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
-        role-to-assume: arn:aws:iam::967762580629:user/terraform_ci_user
+        role-to-assume: arn:aws:iam::967762580629:policy/devops-ci-role
         role-session-name: staging-session    
     - name: Checkout
       uses: actions/checkout@v3 #test
